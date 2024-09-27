@@ -1,21 +1,22 @@
-using System;
-
-public class Soldier : Unit
+namespace ExGrupal_IndieBuilders
 {
-    public Soldier(string name, int price, int health, int damage, int speed, bool isPlayerTeam)
+    public class Soldier : Unit
     {
-        this.name = name;
-        this.price = price;
-        this.health = health;
-        this.damage = damage;
-        this.speed = speed;
-        this.isPlayerTeam = isPlayerTeam;
-    }
-    public override void Attack(IEntity target)
-    {
-        if (target.IsPlayerTeam() != this.IsPlayerTeam() && (target is Helicopter  target is Structure))
+        public Soldier(string name, int price, int health, int damage, int speed, bool isPlayerTeam)
         {
-            target.TakeDamage(damage);
+            this.name = name;
+            this.price = price;
+            this.health = health;
+            this.damage = damage;
+            this.speed = speed;
+            this.isPlayerTeam = isPlayerTeam;
+        }
+        public override void Attack(IEntity target)
+        {
+            if (target.IsPlayerTeam() != this.IsPlayerTeam() && (target is Helicopter || target is Structure))
+            {
+                target.TakeDamage(damage);
+            }
         }
     }
 }
