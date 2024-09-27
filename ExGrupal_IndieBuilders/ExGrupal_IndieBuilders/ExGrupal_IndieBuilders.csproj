@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="CollectionStructure.cs" />
     <Compile Include="DefenseStructure.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Helicopter.cs" />
     <Compile Include="IAttacker.cs" />
     <Compile Include="IEntity.cs" />
