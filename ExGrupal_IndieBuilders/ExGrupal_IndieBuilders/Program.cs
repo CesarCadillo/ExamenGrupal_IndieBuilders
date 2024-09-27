@@ -10,6 +10,8 @@ namespace ExGrupal_IndieBuilders
     {
         static void Main(string[] args)
         {
+            Game game = new Game();
+            game.Start();
         }
     }
 }
