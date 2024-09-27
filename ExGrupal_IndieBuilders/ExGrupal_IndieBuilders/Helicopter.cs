@@ -1,22 +1,23 @@
-using System;
-
-public class Helicopter : Unit
+namespace ExGrupal_IndieBuilders
 {
-    public Helicopter(string name, int price, int health, int damage, int speed, bool isPlayerTeam)
+    public class Helicopter : Unit
     {
-        this.name = name;
-        this.price = price;
-        this.health = health;
-        this.damage = damage;
-        this.speed = speed;
-        this.isPlayerTeam = isPlayerTeam;
-    }
-
-    public override void Attack(IEntity target)
-    {
-        if (target is Tank || target is Structure)
+        public Helicopter(string name, int price, int health, int damage, int speed, bool isPlayerTeam)
         {
-            target.TakeDamage(damage);
+            this.name = name;
+            this.price = price;
+            this.health = health;
+            this.damage = damage;
+            this.speed = speed;
+            this.isPlayerTeam = isPlayerTeam;
+        }
+
+        public override void Attack(IEntity target)
+        {
+            if (target is Tank || target is Structure)
+            {
+                target.TakeDamage(damage);
+            }
         }
     }
 }
